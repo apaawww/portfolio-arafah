@@ -1,0 +1,921 @@
+/* ==================================================
+   1. RESET & DASAR
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #25334a;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==================================================
+   2. NAVBAR
+   ================================================== */
+
+.arafah_header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 2px 14px rgba(28, 55, 95, 0.07);
+}
+
+.arafah_navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1160px;
+    min-height: 68px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+.arafah_brand,
+.arafah_footer_brand {
+    color: #263b5b;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.arafah_brand b,
+.arafah_footer_brand b {
+    color: #2474d2;
+}
+
+.arafah_brand_icon {
+    margin-right: 8px;
+    color: #2474d2;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.arafah_menu {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    transform: translateX(-50%);
+}
+
+.arafah_menu a {
+    color: #34445c;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.arafah_menu a:hover {
+    color: #2474d2;
+}
+
+/* Navbar saat section sedang aktif */
+
+.arafah_menu a.active {
+    position: relative;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.arafah_menu a.active::after {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2563eb;
+    border-radius: 2px;
+    content: "";
+}
+
+
+/* ==================================================
+   3. HERO
+   ================================================== */
+
+.arafah_hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    max-width: 1160px;
+    min-height: 330px;
+    margin: 0 auto;
+    padding: 42px 6%;
+    overflow: hidden;
+    background: linear-gradient(110deg, #eef6ff, #dcecff);
+}
+
+.arafah_hero_text {
+    position: relative;
+    z-index: 1;
+}
+
+.arafah_eyebrow {
+    color: #31445f;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.arafah_hero h1 {
+    margin: 3px 0 8px;
+    color: #1d3150;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -0.9px;
+}
+
+.arafah_hero h1 span {
+    color: #2474d2;
+}
+
+.arafah_hero h2 {
+    margin-bottom: 12px;
+    color: #52647d;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.arafah_hero_desc {
+    max-width: 470px;
+    color: #465873;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.arafah_hero_buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.arafah_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 17px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.arafah_button_primary {
+    color: #ffffff;
+    background: #2474d2;
+    box-shadow: 0 5px 12px rgba(36, 116, 210, 0.18);
+}
+
+.arafah_button_outline {
+    color: #2167b8;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid #2474d2;
+}
+
+.arafah_button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Ilustrasi Hero */
+
+.arafah_hero_art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 245px;
+}
+
+.arafah_art_circle {
+    position: absolute;
+    top: -10px;
+    right: 7%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #c7e0ff;
+}
+
+.arafah_code_window {
+    position: relative;
+    z-index: 1;
+    width: 250px;
+    height: 180px;
+    padding: 30px 20px 15px;
+    color: #ffffff;
+    background: linear-gradient(145deg, #20395d, #10233f);
+    border: 7px solid #7189a9;
+    border-radius: 13px;
+    box-shadow: 13px 17px 0 #8ca6c5,
+                0 22px 30px rgba(26, 54, 91, 0.2);
+    transform: perspective(500px) rotateY(-12deg) rotateX(3deg);
+}
+
+.arafah_window_dots {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    display: flex;
+    gap: 5px;
+}
+
+.arafah_window_dots i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #8dbbfa;
+}
+
+.arafah_code_symbol {
+    color: #69b5ff;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.arafah_code_window p {
+    margin-top: 5px;
+    color: #dceaff;
+    font-size: 11px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.arafah_code_window p span {
+    color: #79baff;
+}
+
+.arafah_art_base {
+    position: absolute;
+    right: 1%;
+    bottom: 13px;
+    width: 290px;
+    height: 13px;
+    border-radius: 50%;
+    background: #829fbe;
+    transform: skewX(-25deg);
+}
+
+.arafah_art_plant {
+    position: absolute;
+    right: 0;
+    bottom: 24px;
+    z-index: 2;
+    width: 43px;
+    height: 95px;
+}
+
+.arafah_art_plant b {
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    width: 30px;
+    height: 25px;
+    border-radius: 3px 3px 10px 10px;
+    background: #e8f0fa;
+}
+
+.arafah_art_plant span {
+    position: absolute;
+    bottom: 24px;
+    left: 18px;
+    width: 13px;
+    height: 42px;
+    border-radius: 100% 0 100% 0;
+    background: #3b9b79;
+    transform: rotate(-25deg);
+}
+
+.arafah_art_plant span:nth-child(2) {
+    bottom: 35px;
+    left: 2px;
+    transform: rotate(-55deg);
+}
+
+.arafah_art_plant span:nth-child(3) {
+    bottom: 42px;
+    left: 27px;
+    transform: rotate(30deg) scale(0.9);
+}
+
+
+/* ==================================================
+   4. BAGIAN UMUM
+   ================================================== */
+
+.arafah_section {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 30px 6%;
+}
+
+.arafah_section_heading h2 {
+    margin: 0;
+    color: #1d3150;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.arafah_section_heading > span {
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 5px;
+    border-radius: 4px;
+    background: #2474d2;
+}
+
+.arafah_section_kicker {
+    margin-bottom: 4px;
+    color: #2474d2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.arafah_section_intro {
+    margin: 5px 0 17px;
+    color: #69768a;
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   5. ABOUT
+   ================================================== */
+.arafah_about {
+    padding-top: 22px;
+}
+.arafah_about_content {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    align-items: start;
+    gap: 55px;
+    margin-top: 0;
+    padding-top: 16px;
+
+}
+
+.arafah_about_text h3 {
+    margin-bottom: 8px;
+    color: #2c4262;
+    font-size: 16px;
+}
+
+.arafah_about_text p {
+    margin-bottom: 10px;
+    color: #5b687a;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.arafah_about_details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.arafah_about_details > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.arafah_detail_icon {
+    color: #2474d2;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.arafah_about_details b,
+.arafah_about_details small {
+    display: block;
+}
+
+.arafah_about_details b {
+    color: #31445f;
+    font-size: 10px;
+}
+
+.arafah_about_details small {
+    color: #758197;
+    font-size: 10px;
+}
+
+
+/* Kartu Profil */
+
+.arafah_profile_card {
+    padding: 13px;
+    text-align: center;
+    background: #f2f6fc;
+    border: 1px solid #e4ecf7;
+    border-radius: 12px;
+}
+
+.arafah_avatar {
+    width: 100%;
+    height: 220px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #d8e9ff, #a9c9f0);
+}
+
+.arafah_avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.arafah_profile_card h3 {
+    color: #263b5b;
+    font-size: 13px;
+}
+
+.arafah_profile_card p,
+.arafah_profile_card small {
+    display: block;
+    color: #718097;
+    font-size: 10px;
+}
+
+
+/* ==================================================
+   6. SKILLS
+   ================================================== */
+
+.arafah_skills {
+    padding-top: 22px;
+}
+
+.arafah_skill_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 9px;
+}
+
+.arafah_skill_card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 9px 12px;
+    color: #34445c;
+    background: #f3f7fc;
+    border: 1px solid #e8eef7;
+    border-radius: 8px;
+    font-size: 11px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arafah_skill_card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 17px rgba(30, 65, 110, 0.08);
+}
+
+.arafah_skill_card i {
+    font-size: 25px;
+}
+
+.arafah_skill_badge {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    color: #ffffff;
+    background: #2474d2;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Warna Badge Skills */
+
+.arafah_html {
+    background: #e66a3e;
+}
+
+.arafah_css {
+    background: #397bd1;
+}
+
+.arafah_js {
+    color: #29344a;
+    background: #e4bd35;
+}
+
+.arafah_php {
+    background: #6678b7;
+    font-size: 8px;
+}
+
+.arafah_db {
+    background: #477c91;
+}
+
+.arafah_laravel {
+    background: #e65d56;
+}
+
+.arafah_figma {
+    background: #9868c9;
+}
+
+.arafah_python {
+    background: #397da5;
+}
+
+.arafah_java {
+    background: #d47b3d;
+}
+
+.arafah_git {
+    background: #394d67;
+    font-size: 9px;
+}
+
+
+/* ==================================================
+   7. PROJECTS
+   ================================================== */
+
+.arafah_projects {
+    padding-top: 30px;
+    padding-bottom: 48px;
+}
+
+.arafah_project_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.arafah_project_card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e3eaf3;
+    border-radius: 9px;
+    box-shadow: 0 4px 13px rgba(26, 55, 94, 0.045);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arafah_project_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(26, 55, 94, 0.1);
+}
+
+/* Gambar Screenshot Project */
+
+.arafah_project_visual {
+    width: 100%;
+    height: 125px;
+    overflow: hidden;
+    background: #edf3fa;
+}
+
+.arafah_project_visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.3s ease;
+}
+
+.arafah_project_card:hover .arafah_project_visual img {
+    transform: scale(1.04);
+}
+
+/* Informasi Project */
+
+.arafah_project_info {
+    padding: 12px;
+}
+
+.arafah_project_type {
+    color: #2875c8;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.arafah_project_info h3 {
+    margin: 4px 0 6px;
+    color: #293d5a;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.arafah_project_info p {
+    min-height: 65px;
+    color: #6b7789;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.arafah_project_info a {
+    display: inline-block;
+    margin-top: 9px;
+    color: #2474d2;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.arafah_project_info a:hover {
+    color: #174f96;
+    text-decoration: underline;
+}
+
+.arafah_project_info a span {
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+/* ==================================================
+   8. FOOTER
+   ================================================== */
+
+.arafah_footer {
+    padding: 25px max(6%, calc((100% - 1020px) / 2)) 12px;
+    color: #dbe6f5;
+    background: #172a47;
+}
+
+.arafah_footer_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.arafah_footer_brand {
+    color: #ffffff;
+}
+
+.arafah_footer_top p {
+    margin-top: 5px;
+    color: #aebdd1;
+    font-size: 10px;
+}
+
+.arafah_footer_contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.arafah_contact_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+}
+
+.arafah_contact_item > span,
+.arafah_contact_item > i {
+    color: #8fc3ff;
+    font-size: 20px;
+}
+
+.arafah_contact_item b,
+.arafah_contact_item small,
+.arafah_contact_item a {
+    display: block;
+}
+
+.arafah_contact_item b {
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.arafah_contact_item small,
+.arafah_contact_item a {
+    color: #b8c8dc;
+    font-size: 10px;
+}
+
+.arafah_footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 10px;
+    margin-top: 20px;
+    color: #9fb0c6;
+    border-top: 1px solid #344762;
+    font-size: 9px;
+}
+
+.arafah_footer_bottom a {
+    color: #c8dcf6;
+}
+
+
+/* ==================================================
+   9. RESPONSIVE TABLET
+   ================================================== */
+
+@media (max-width: 900px) {
+    .arafah_project_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arafah_footer_top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .arafah_footer_contacts {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px 28px;
+    }
+}
+
+
+/* ==================================================
+   10. RESPONSIVE MOBILE
+   ================================================== */
+
+@media (max-width: 760px) {
+    .arafah_navbar {
+        min-height: auto;
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .arafah_menu {
+        position: static;
+        left: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        transform: none;
+    }
+
+    .arafah_hero {
+        grid-template-columns: 1fr;
+        padding: 35px 7% 15px;
+    }
+
+    .arafah_hero_art {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .arafah_hero_image {
+        display: block;
+        width: 300px;
+        height: 280px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px;
+    }
+
+
+    .arafah_art_circle {
+        right: 20%;
+        width: 200px;
+        height: 200px;
+    }
+
+    .arafah_code_window {
+        transform: scale(0.85);
+    }
+
+    .arafah_art_base {
+        right: 12%;
+    }
+
+    .arafah_art_plant {
+        right: 12%;
+    }
+
+    .arafah_about_content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .arafah_profile_card {
+        justify-self: center;
+        width: 100%;
+        max-width: 240px;
+    }
+
+    .arafah_skill_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .arafah_footer_contacts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 24px;
+    }
+}
+
+
+/* ==================================================
+   11. RESPONSIVE HP KECIL
+   ================================================== */
+
+@media (max-width: 430px) {
+    .arafah_menu {
+        gap: 13px;
+    }
+
+    .arafah_menu a {
+        font-size: 11px;
+    }
+
+    .arafah_section {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .arafah_project_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .arafah_project_visual {
+        height: 150px;
+    }
+
+    .arafah_project_info p {
+        min-height: auto;
+    }
+
+    .arafah_about_details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .arafah_footer_contacts {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .arafah_footer_bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* FIX UKURAN FOTO HERO DESKTOP */
+.arafah_hero .arafah_hero_art .arafah_hero_image {
+    width: 350px !important;
+    height: 350px !important;
+    max-width: 350px !important;
+    max-height: 350px !important;
+    min-width: 350px !important;
+    object-fit: cover !important;
+    flex: 0 0 280px !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+    object-fit: cover;
+}
+@media (max-width: 760px) {
+    .arafah_hero .arafah_hero_art .arafah_hero_image {
+        width: 230px !important;
+        height: 220px !important;
+        max-width: 230px !important;
+        max-height: 220px !important;
+        min-width: 230px !important;
+        flex-basis: 230px !important;
+        margin-top: 18px;
+    }
+}
+
+
