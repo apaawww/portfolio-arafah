@@ -91,13 +91,13 @@ a {
 
 /* Navbar saat section sedang aktif */
 
-.arafah_menu a.active {
+.arafah_menu a.arafah_active {
     position: relative;
     color: #2563eb;
     font-weight: 700;
 }
 
-.arafah_menu a.active::after {
+.arafah_menu a.arafah_active::after {
     position: absolute;
     bottom: -6px;
     left: 0;
